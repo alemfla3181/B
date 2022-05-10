@@ -2,15 +2,27 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require("cors");
+const { User } = require('./models/User')
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
 
+
+const mongoose = require("mongoose");
+const connect = mongoose
+.connect(config.mongoURI, {
+    useUnifiedTopology:true
+})
+.then(() => console.log("MongoDB Connected..."))
+.catch((err) => console.log(err));
+
+app.use(cors());
+
 app.post('/api/users/register', (req, res) => {
     // 회원 가입할 때 필요한 정보들을 client에서 가져오면 그것들을 데이터베이스에 넣어준다
-    const user = new Users(req.body)
+    const user = new User(req.body)
     // User.js의 userSchema.pre가 동작한 다음 비밀번호를 hash한 후 next()로 넘어온다.
     user.save((err, userInfo) => {
         if (err) return res.json({ success: false, err })
@@ -19,17 +31,6 @@ app.post('/api/users/register', (req, res) => {
         })
     })
 })
-
-const mongoose = require("mongoose");
-const connect = mongoose
-    .connect(config.mongoURI, {
-        useUnifiedTopology:true
-    })
-    .then(() => console.log("MongoDB Connected..."))
-    .catch((err) => console.log(err));
-
-app.use(cors());
-
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 

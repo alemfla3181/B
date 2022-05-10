@@ -37,7 +37,7 @@ function Register() {
         }
         console.log(body)
 
-        axios.post('/register', body)
+        axios.post('/api/users/register', body)
         .then(response => {
             if (response.data.success) {
                 alert("ok");
