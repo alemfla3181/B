@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Footer from './Footer';
 import Header from './Header';
+import axios from "axios";
+
 function Register() {
     const [Email, setEmail] = useState("");
     const [Name, setName] = useState("");
@@ -27,6 +29,23 @@ function Register() {
         if (Password !== ConfirmPassword) {
             return alert('비밀번호와 비밀번호 확인은 같아야 합니다.');
         }
+
+        let body = {
+            email: Email,
+            name: Name,
+            password: Password
+        }
+        console.log(body)
+
+        axios.post('/register', body)
+        .then(response => {
+            if (response.data.success) {
+                alert("ok");
+            } else {
+                alert("로그아웃 하는데 실패 했습니다.");
+            }
+        })
+    
     }
 
     return (
