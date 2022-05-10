@@ -9,6 +9,10 @@ const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
+app.use(cors());
 
 const mongoose = require("mongoose");
 const connect = mongoose
@@ -18,7 +22,6 @@ const connect = mongoose
 .then(() => console.log("MongoDB Connected..."))
 .catch((err) => console.log(err));
 
-app.use(cors());
 
 app.post('/api/users/register', (req, res) => {
     // 회원 가입할 때 필요한 정보들을 client에서 가져오면 그것들을 데이터베이스에 넣어준다
