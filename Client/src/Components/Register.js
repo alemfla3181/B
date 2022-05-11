@@ -39,7 +39,7 @@ function Register() {
 
         axios.post('/api/users/register', body).then(response => {
             if (response.data.success) {
-                window.location.href = "/";
+                window.location.href = "/login";
             }
             console.log(Response.data);
         })

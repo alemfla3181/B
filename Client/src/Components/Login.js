@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import axios from "axios";
-
+//  여기 분기점 해봅시당
 
 function Login(props) {
     const [Email, setEmail] = useState("");
@@ -27,6 +27,7 @@ function Login(props) {
 
         axios.post('/api/users/login', body).then(response => {
             if (response.data.loginSuccess) {
+                sessionStorage.setItem('user_Email', Email);
                 window.location.href = "/";
             }
             console.log(Response.data);
