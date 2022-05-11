@@ -5,14 +5,22 @@ const ContentsSchema = mongoose.Schema({
 
     writer: {
         type: Schema.Types.ObjectId,
-        ref:'User'
+        ref: 'User'
     },
+
+    title: {
+        type: String
+    },
+
     content: {
+        type: String
+    },
+
+    coment: {
         type: String
     }
 
-
-}, {timestamps: true})
+}, { timestamps: true })
 
 
 
