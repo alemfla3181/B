@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-// const cors = require("cors");
+const cors = require("cors");
 const { User } = require('./models/User')
 
 const bodyParser = require("body-parser");
@@ -12,7 +12,7 @@ const config = require("./config/key");
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-// app.use(cors());
+app.use(cors());
 
 
 const mongoose = require("mongoose");
