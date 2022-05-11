@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
+import axios from "axios";
 
-function Login() {
+
+function Login(props) {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
 
@@ -15,6 +18,19 @@ function Login() {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
+
+        let body = {
+            email: Email,
+            password: Password
+        }
+        console.log(body)
+
+        axios.post('/api/users/login', body).then(Response => {
+            if (Response.data.loginSuccess) {
+                window.location.href = "/";
+            }
+            console.log(Response.data);
+        })
     }
 
     return (

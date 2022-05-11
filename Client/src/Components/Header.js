@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
         <div>
             <header align='center'>
-                <h1><a href="#">게시판 이름</a></h1>
+                <h1><Link to="/">Board</Link></h1>
             </header>
             <hr />
         </div>
