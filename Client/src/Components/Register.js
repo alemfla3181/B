@@ -38,6 +38,13 @@ function Register() {
         console.log(body)
 
         axios.post('/api/users/register', body)
+        .then(response => {
+            if (response.data.success) {
+                alert("ok");
+            } else {
+                alert("로그아웃 하는데 실패 했습니다.");
+            }
+        })
     
     }
 

@@ -9,10 +9,6 @@ const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
-app.use(cors());
 
 
 const mongoose = require("mongoose");
@@ -23,6 +19,7 @@ const connect = mongoose
 .then(() => console.log("MongoDB Connected..."))
 .catch((err) => console.log(err));
 
+app.use(cors());
 
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
