@@ -23,7 +23,7 @@ function Login(props) {
             email: Email,
             password: Password
         }
-        console.log(body)
+        // console.log(body)
 
         axios.post('/api/users/login', body).then(response => {
             if (response.data.loginSuccess) {
