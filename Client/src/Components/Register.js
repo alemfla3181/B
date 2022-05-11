@@ -37,7 +37,12 @@ function Register() {
         }
         console.log(body)
 
-        axios.post('/api/users/register', body)
+        axios.post('/api/users/register', body).then(response => {
+            if (response.data.success) {
+                window.location.href = "/";
+            }
+            console.log(Response.data);
+        })
     
     }
 

@@ -25,8 +25,8 @@ function Login(props) {
         }
         console.log(body)
 
-        axios.post('/api/users/login', body).then(Response => {
-            if (Response.data.loginSuccess) {
+        axios.post('/api/users/login', body).then(response => {
+            if (response.data.loginSuccess) {
                 window.location.href = "/";
             }
             console.log(Response.data);
