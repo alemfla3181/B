@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
     }
 })
 
-
+// 비밀번호 암호화 저장
 userSchema.pre('save', function( next ) {
     var user = this;
     
@@ -58,6 +58,7 @@ userSchema.methods.comparePassword = function(plainPassword,cb){
     })
 }
 
+// 토큰 생성
 userSchema.methods.generateToken = function(cb) {
     var user = this;
     // console.log('user',user)
