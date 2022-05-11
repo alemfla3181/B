@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 // app.use(cors());
 
+
 const mongoose = require("mongoose");
 const connect = mongoose
 .connect(config.mongoURI, {
