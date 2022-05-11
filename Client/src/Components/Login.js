@@ -27,6 +27,7 @@ function Login(props) {
 
         axios.post('/api/users/login', body).then(response => {
             if (response.data.loginSuccess) {
+                sessionStorage.setItem('user_Email', Email);
                 window.location.href = "/";
             }
             console.log(Response.data);
