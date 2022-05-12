@@ -1,16 +1,31 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 
 function MainBoard() {
-    const [User, setUser] = useState(false);
+  const [User, setUser] = useState(false);
+  const [Contents, setContents] = useState([]);
 
     useEffect(() => {
         if (window.sessionStorage.getItem("user_Email", JSON.stringify(User))) {
             setUser(true);
-        }
-    }, [])
+      }
+      
+      getContent();
+    },[])
+  
+  const getContent = () => {
+    axios.get("/api/contents/Board").then((response) => {
+      if (response.data.success) {
+        setContents(response.data.contents);
+        console.log(response.data.contents);
+      } else {
+        alert("글 내용 가져오기 실패!");
+      }
+    })
+  }
 
     return (
         <div className='LandingPage'>

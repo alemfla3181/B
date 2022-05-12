@@ -36,7 +36,7 @@ function Write() {
       <div className='LandingPage'>
             <Header />
             <div>
-                <form style={{ display: 'flex', flexDirection: 'column' }}
+                <form style={{ display: 'flex', flexDirection: 'column'}}
                     onSubmit={onSubmitHandler}>
                     <label>Title</label>
                     <input type="title" value={Title} onChange={onTitleHandler} />
