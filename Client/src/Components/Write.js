@@ -8,7 +8,6 @@ import './Write.css';
 function Write() {
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
-  const [Name, setName] = useState("");
 
   const onTitleHandler = (event) => {
     setTitle(event.currentTarget.value)

@@ -33,15 +33,14 @@ function MainBoard() {
     })
   }
   
-  const onDelete = () => {
-    let body = {
-      writer: window.sessionStorage.getItem("user_Email"),
-    }
-    
-    if (window.confirm('삭제하시겠쑵니까?')) {
-      axios.post('/api/contents/deleteBoard', body).then(response => {
+  const onDelete = (id) => {
+      if (window.confirm('삭제하시겠쑵니까?')) {
+      setContents(Contents.filter(ID => {
+        return id !== ID;
+      }))
+      axios.post('/api/contents/deleteBoard', id).then(response => {
         if (response.data.success) {
-          console.log("삭제 완료");
+          console.log("삭제 완료", id);
         } else {
           alert("글 내용 삭제 실패");
         }
@@ -81,7 +80,7 @@ function MainBoard() {
                         <td>{idx + 1}</td>
                         <td>{item.title}</td>
                         <td>{item.name}</td>
-                        <button onClick={onDelete}>X</button>
+                        <button onClick={() => onDelete(item._id)}>X</button>
                         </tr>                       
                         )
                   })
