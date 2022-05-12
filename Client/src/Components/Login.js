@@ -35,7 +35,7 @@ function Login(props) {
     }
 
     return (
-        <div>
+        <div className='LandingPage'>
             <Header />
             <div >
                 <form style={{ display: 'flex', flexDirection: 'column' }}

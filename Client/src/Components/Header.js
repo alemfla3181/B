@@ -7,7 +7,6 @@ function Header() {
             <header align='center'>
                 <h1><Link to="/">Board</Link></h1>
             </header>
-            <hr />
         </div>
     )
 }

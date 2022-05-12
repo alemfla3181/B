@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
-import './MainBoard.css';
 
 function MainBoard() {
     const [User, setUser] = useState(false);
@@ -18,7 +17,7 @@ function MainBoard() {
             {!User ?
                 <div>
                     <Header />
-                        <div>
+                        <div className='button'>
                             <button><Link to='/login'>로그인</Link></button>
                             <button><Link to='/register'>회원가입</Link></button>
                         </div>
