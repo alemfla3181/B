@@ -36,3 +36,28 @@ a{
   text-decoration: none;
 }
 
+table{
+  width: 100%;
+  margin: 10px;
+  line-height: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+td:nth-child(1){
+  width: 10%;
+  font-size: 20px;
+}
+
+td:nth-child(2){
+  width: 70%;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(34, 47, 101);
+}
+
+td:nth-child(3){
+  width: 20%;
+  font-weight: 300;
+  font-size: 18px;
+}

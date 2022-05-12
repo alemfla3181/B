@@ -37,9 +37,7 @@ function MainBoard() {
     let body = {
       writer: window.sessionStorage.getItem("user_Email"),
     }
-
-    console.log(body);
-
+    
     if (window.confirm('삭제하시겠쑵니까?')) {
       axios.post('/api/contents/deleteBoard', body).then(response => {
         if (response.data.success) {
@@ -83,7 +81,8 @@ function MainBoard() {
                         <td>{item.title}</td>
                         <td>{item.name}</td>
                         <button onClick={onDelete}>X</button>
-                      </tr>)
+                        </tr>                       
+                        )
                   })
                 }
               </tbody>
