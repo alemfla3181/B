@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Footer from './Footer';
 import Header from './Header';
+import axios from "axios";
 
 function Write() {
     const [Title, setTitle] = useState("");
@@ -16,6 +17,19 @@ function Write() {
     const onSubmitHandler = (event) => {
         console.log(event);
         event.preventDefault();
+
+        let body = {
+            // 작성자 저장해야됨
+            title: Title,
+            content: Content
+        }
+
+        axios.post('/api/contents/createBoard', body).then(response => {
+            if (response.data.success) {
+                window.location.href = "/";
+            }
+            console.log(Response.data);
+        })
     }
 
     return (
