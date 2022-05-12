@@ -55,8 +55,8 @@ function MainBoard() {
         <div>
           <Header />
           <div className='button'>
-            <button><Link to='/login'>로그인</Link></button>
-            <button><Link to='/register'>회원가입</Link></button>
+            <Link to='/login'><button>로그인</button></Link>
+            <Link to='/register'><button>회원가입</button></Link>
           </div>
           <Footer />
         </div>
@@ -89,7 +89,7 @@ function MainBoard() {
               </tbody>
             </table>
           </div>
-          <button><Link to='/write'>글쓰기</Link></button>
+          <Link to='/write'><button>글쓰기</button></Link>
           <Footer />
         </div>        
       }

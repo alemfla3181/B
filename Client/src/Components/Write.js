@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import axios from "axios";
@@ -47,7 +48,7 @@ function Write() {
           <textarea type="content" value={Content} onChange={onContentHandler} />
           <br />
           <button type="submit">Write</button>
-          <button type="reset"><a href='/'>Cancel</a></button>
+          <Link to="/"><button type="reset">Cancel</button></Link>
         </form>
       </div>
       <Footer />

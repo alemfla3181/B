@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     return (
-        <div className='header'>
+        <div>
             <header align='center'>
-                <h1><Link to="/">Board</Link></h1>
+            <Link to="/"><h1 className='header'>Board</h1></Link>
             </header>
         </div>
     )

@@ -4,6 +4,8 @@ html, body{
 
 .header{
   text-transform: uppercase;
+  font-size: 60px;
+  line-height: 30px;
 }
 
 .LandingPage{
