@@ -37,7 +37,6 @@ function MainBoard() {
     let body = {
       _id : id,
     }
-
       if (window.confirm('삭제하시겠쑵니까?')) {
       setContents(Contents.filter(ID => {
         return id !== ID;

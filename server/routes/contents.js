@@ -24,7 +24,6 @@ router.get('/Board', (req, res) => {
 
 // 글 삭제
 router.post('/deleteBoard', (req, res) => {
-  console.log(req.body);
   Contents.findOneAndDelete({ '_id': req.body._id }).exec((err, result) => {
     if (err) return res.status(400).send(err);
     res.status(200).json({success: true, result})
