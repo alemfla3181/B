@@ -2,11 +2,9 @@ import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
-
-
+import './MainBoard.css';
 
 function MainBoard() {
-
     const [User, setUser] = useState(false);
     
     useEffect(() => {
@@ -16,7 +14,7 @@ function MainBoard() {
     },[])
 
     return (
-        <div>
+        <div className='LandingPage'>
             {!User ?
                 <div>
                     <Header />

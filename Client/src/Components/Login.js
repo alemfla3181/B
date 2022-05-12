@@ -37,9 +37,7 @@ function Login(props) {
     return (
         <div>
             <Header />
-            <div style={{
-                display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh'
-            }}>
+            <div >
                 <form style={{ display: 'flex', flexDirection: 'column' }}
                     onSubmit={onSubmitHandler}>
                     <label>Email</label>
