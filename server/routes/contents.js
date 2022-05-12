@@ -30,4 +30,14 @@ router.post('/deleteBoard', (req, res) => {
   })
 })
 
+// 게시글 가져옴
+router.get('/contents_by_id', (req, res) => {
+  console.log(req.query);
+  Contents.findOne({ '_id': req.query }).exec((err, result) => {
+    if (err) return res.status(400).send(err);
+    res.status(200).json({ success: true, result})
+    
+  })
+})
+
 module.exports = router;

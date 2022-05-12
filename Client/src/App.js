@@ -9,6 +9,7 @@ import MainBoard from './Components/MainBoard';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Write from './Components/Write';
+import Contents from './Components/Contents';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/write" element={<Write />} />
+          <Route exact path="/contents/:contentsId" element={<Contents />} />
         </Routes>
       </div>
     </Router>
