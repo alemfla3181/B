@@ -46,7 +46,7 @@ function Write() {
           <textarea type="content" value={Content} onChange={onContentHandler} />
           <br />
           <button type="submit">Write</button>
-          <button type="reset">Cancel</button>
+          <button type="reset"><a href='/'>Cancel</a></button>
         </form>
       </div>
       <Footer />
