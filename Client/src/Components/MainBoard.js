@@ -34,11 +34,15 @@ function MainBoard() {
   }
   
   const onDelete = (id) => {
+    let body = {
+      _id : id,
+    }
+
       if (window.confirm('삭제하시겠쑵니까?')) {
       setContents(Contents.filter(ID => {
         return id !== ID;
       }))
-      axios.post('/api/contents/deleteBoard', id).then(response => {
+      axios.post('/api/contents/deleteBoard', body).then(response => {
         if (response.data.success) {
           console.log("삭제 완료", id);
         } else {
