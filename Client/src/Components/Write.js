@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Footer from './Footer';
 import Header from './Header';
 import axios from "axios";
+import './Write.css';
 
 function Write() {
   const [Title, setTitle] = useState("");

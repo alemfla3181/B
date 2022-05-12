@@ -1,0 +1,21 @@
+html, body{
+ 
+}
+
+input{
+  margin: 5%;
+  width: 90%;
+  height: 50px;
+  font-size: 30px;
+}
+
+textarea{
+  margin: 5%;
+  width: 90%;
+  height: 150px;
+}
+
+button{
+  width: 95%;
+  height: 30%;
+}

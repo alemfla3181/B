@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     return (
-        <div>
+        <div className='header'>
             <header align='center'>
                 <h1><Link to="/">Board</Link></h1>
             </header>

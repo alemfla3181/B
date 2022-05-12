@@ -61,6 +61,7 @@ function MainBoard() {
           <Footer />
         </div>
         : <div>
+          <Header />
           <div className="board-list">
             <div className="common-buttons">
             </div>
@@ -89,7 +90,8 @@ function MainBoard() {
             </table>
           </div>
           <button><Link to='/write'>글쓰기</Link></button>
-        </div>
+          <Footer />
+        </div>        
       }
     </div>
   )
