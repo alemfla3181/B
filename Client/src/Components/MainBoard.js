@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 
 function MainBoard() {
     const [User, setUser] = useState(false);
-    
+
     useEffect(() => {
         if (window.sessionStorage.getItem("user_Email", JSON.stringify(User))) {
             setUser(true);
         }
-    },[])
+    }, [])
 
     return (
         <div className='LandingPage'>
@@ -24,9 +24,9 @@ function MainBoard() {
                     <Footer />
                 </div>
                 : <div>
-                    fuck
-                </div> 
-        }
+                    <button><Link to='/write'>글쓰기</Link></button>
+                </div>
+            }
         </div>
     )
 }
