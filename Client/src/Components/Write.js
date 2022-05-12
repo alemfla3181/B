@@ -33,10 +33,12 @@ function Write() {
     }
 
     return (
-      <div className='LandingPage'>
+        <div>
             <Header />
-            <div>
-                <form style={{ display: 'flex', flexDirection: 'column'}}
+            <div style={{
+                display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh'
+            }}>
+                <form style={{ display: 'flex', flexDirection: 'column' }}
                     onSubmit={onSubmitHandler}>
                     <label>Title</label>
                     <input type="title" value={Title} onChange={onTitleHandler} />
