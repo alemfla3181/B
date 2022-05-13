@@ -13,6 +13,7 @@ textarea{
   margin: 5%;
   width: 90%;
   height: 100px;
+  resize: none;
 }
 
 button{
