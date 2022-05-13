@@ -20,19 +20,23 @@ function Write() {
     console.log(event);
     event.preventDefault();
 
-      
     let body = {
-      name : window.sessionStorage.getItem("user_Email"),
+      name: window.sessionStorage.getItem("user_Email"),
       title: Title,
       content: Content
     }
 
-    axios.post('/api/contents/createBoard', body).then(response => {
-      if (response.data.success) {
-        window.location.href = "/";
-      }
-      console.log(Response.data);
-    })
+    if (confirm("저장해라")) {
+
+      axios.post('/api/contents/createBoard', body).then(response => {
+
+        if (response.data.success) {
+          window.location.href = "/";
+        }
+        console.log(Response.data);
+      })
+    }
+
   }
 
   return (
