@@ -26,15 +26,15 @@ function Contents() {
   }, [])
 
   return (
-    <div>
-      <div>
+    <div className='LandingPage'>
+      <div className='title'>
         {Contents.title}
-        <div>
-          작성자 : {Contents.name}
-          작성 시간 : {Contents.createdAt}
-          <div>
-          내용
-            {Contents.content}
+        <div className='contents'>
+          {Contents.name}
+          <br />
+          {Contents.createdAt}
+          <div className='content'>
+          {Contents.content}
           </div>
         </div>
       </div>
