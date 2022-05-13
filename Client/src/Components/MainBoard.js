@@ -80,7 +80,7 @@ function MainBoard() {
                   Contents.map((item, idx) => {
                     return (
                       <tr key={idx}>                       
-                          <td>{idx + 1}</td>
+                        <td>{idx + 1}</td>
                           <Link to={`/contents/${item._id}`}><td>{item.title}</td>  </Link>
                           <td>{item.name}</td>                      
                         <button onClick={() => onDelete(item._id)}>X</button>

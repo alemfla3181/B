@@ -41,7 +41,7 @@ function Register() {
             if (response.data.success) {
                 window.location.href = "/login";
             }
-            console.log(Response.data);
+            console.log(response.data);
         })
     
     }
