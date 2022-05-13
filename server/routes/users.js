@@ -22,14 +22,14 @@ router.post('/login', (req, res) => {
     if (!user) {
       return res.json({
         loginSuccess: false,
-        message: "Auth failed, email not found"
+        message: "가입된 이메일이 없습니다."
       });      
     } else {
       user.comparePassword(req.body.password, (err, isMatch) => {
         if (!isMatch) {
           return res.json({
             loginSuccess: false,
-            message: "Wrong password!"
+            message: "비밀번호를 다시 입력하세요"
           })
         } else {
           return res.json({
