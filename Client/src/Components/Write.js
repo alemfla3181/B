@@ -26,7 +26,7 @@ function Write() {
       content: Content
     }
 
-    if (confirm("저장해라")) {
+    if (window.confirm("저장해라")) {
 
       axios.post('/api/contents/createBoard', body).then(response => {
 
