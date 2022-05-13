@@ -29,6 +29,8 @@ function Login(props) {
             if (response.data.loginSuccess) {
                 sessionStorage.setItem('user_Email', Email);
                 window.location.href = "/";
+            } else{
+                alert(response.data.message);
             }
             console.log(Response.data);
         })

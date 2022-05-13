@@ -44,6 +44,7 @@ function MainBoard() {
       axios.post('/api/contents/deleteBoard', body).then(response => {
         if (response.data.success) {
           console.log("삭제 완료", id);
+          document.location.href = '/';
         } else {
           alert("글 내용 삭제 실패");
         }
