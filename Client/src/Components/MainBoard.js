@@ -51,6 +51,14 @@ function MainBoard() {
     }
   }
 
+  const onLogout = () => {
+    // sessionStorage 에 user_id 로 저장되어있는 아이템을 삭제한다.
+      sessionStorage.removeItem('user_Email')
+      // App 으로 이동(새로고침)
+      document.location.href = '/'
+  }
+
+
   return (
     <div className='LandingPage'>
       {!User ?
@@ -92,6 +100,7 @@ function MainBoard() {
             </table>
           </div>
           <Link to='/write'><button>글쓰기</button></Link>
+          <button onClick={() => onLogout()}>로그아웃</button>
           <Footer />
         </div>        
       }
