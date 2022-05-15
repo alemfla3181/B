@@ -2,21 +2,21 @@ html, body{
  
 }
 
-input{
-  margin: 5%;
+.Write input{
+  margin: 4%;
   width: 90%;
   height: 50px;
   font-size: 30px;
 }
 
-textarea{
-  margin: 5%;
+.Write textarea{
+  margin: 4%;
   width: 90%;
   height: 100px;
   resize: none;
 }
 
-button{
-  width: 95%;
+.Write button{
+  width: 90%;
   height: 30%;
 }

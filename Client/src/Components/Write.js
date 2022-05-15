@@ -42,9 +42,8 @@ function Write() {
   return (
     <div className='LandingPage'>
       <Header />
-      <div>
-        <form style={{ display: 'flex', flexDirection: 'column' }}
-          onSubmit={onSubmitHandler}>
+      <div className='Write'>
+        <form onSubmit={onSubmitHandler}>
           <label>Title</label>
           <input type="title" value={Title} onChange={onTitleHandler} />
           <label>Content</label>

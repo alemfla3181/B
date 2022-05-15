@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import axios from "axios";
-//  여기 분기점 해봅시당
+
 
 function Login(props) {
     const [Email, setEmail] = useState("");
@@ -39,9 +39,7 @@ function Login(props) {
     return (
         <div className='LandingPage'>
             <Header />
-            <div >
-                <form style={{ display: 'flex', flexDirection: 'column' }}
-                    onSubmit={onSubmitHandler}>
+                <form onSubmit={onSubmitHandler}>
                     <label>Email</label>
                     <input type="email" value={Email} onChange={onEmailHandler} />
                     <label>Password</label>
@@ -49,7 +47,7 @@ function Login(props) {
                     <br />
                     <button type="submit">Login</button>
                 </form>
-            </div>
+
             <Footer />
         </div>
     )

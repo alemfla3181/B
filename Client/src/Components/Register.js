@@ -50,8 +50,7 @@ function Register() {
         <div className='LandingPage'>
             <Header />
             <div>
-                <form style={{ display: 'flex', flexDirection: 'column' }}
-                    onSubmit={onSubmitHandler}>
+                <form onSubmit={onSubmitHandler}>
                     <label>Email</label>
                     <input type="email" value={Email} onChange={onEmailHandler} />
                     <label>Name</label>

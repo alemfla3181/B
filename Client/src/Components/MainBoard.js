@@ -24,8 +24,7 @@ function MainBoard() {
     axios.get("/api/contents/Board").then((response) => {
       if (response.data.success) {
         setContents(response.data.contents);
-        console.log(response.data.contents);
-
+        // console.log(response.data.contents);
 
       } else {
         alert("글 내용 가져오기 실패!");
@@ -65,17 +64,15 @@ function MainBoard() {
       {!User ?
         <div>
           <Header />
-          <div className='button'>
+          <div className='Main_button'>
             <Link to='/login'><button>로그인</button></Link>
             <Link to='/register'><button>회원가입</button></Link>
           </div>
           <Footer />
         </div>
         : <div>
-          <Header />
+          <Header user={User}/>
           <div className="board-list">
-            <div className="common-buttons">
-            </div>
             <table className="w3-table-all">
               <thead>
                 <tr>
